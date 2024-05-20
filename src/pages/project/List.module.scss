@@ -1,0 +1,31 @@
+.container {
+    margin: 200px 103px 0 103px;
+    display: grid;
+    row-gap: 40px;
+
+    .header {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-between;
+
+        .addBtnSection {
+            padding: 10px;
+
+            button {
+                background-color: #101828;
+                color: #FFFFFF;
+                font-size: 16px;
+                border: none;
+                padding: 14px;
+                border-radius: 6px;
+            }
+        }
+    }
+
+    .list {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+}
