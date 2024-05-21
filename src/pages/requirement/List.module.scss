@@ -1,0 +1,28 @@
+.container {
+    display: grid;
+    margin: 160px auto 0 auto;
+    row-gap: 40px;
+
+    .borderSection {
+        display: grid;
+        row-gap: 10px;
+
+        .board {
+            border: 1px solid #E4E7EC;
+            border-collapse: collapse;
+
+            tr {
+                border: 1px solid #E4E7EC;
+            }
+
+            td {
+                text-align: center;
+            }
+
+            tbody td:nth-child(4) {
+                text-align: start;
+                width: 600px;
+            }
+        }
+    }
+}
