@@ -27,7 +27,7 @@ export default function RequirementDetail() {
                 <table className={cn(styles.contentTable)}>
                     <colgroup>
                         <col className={cn(styles.itemNo)}/>
-                        <col className={cn(styles.detail)}/>
+                        <col/>
                         <col className={cn(styles.count)}/>
                     </colgroup>
                     <thead>
