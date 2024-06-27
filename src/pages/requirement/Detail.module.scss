@@ -1,0 +1,65 @@
+.container {
+    display: grid;
+    margin: 160px auto 0 auto;
+    row-gap: 40px;
+
+    table.infoTable {
+        border: 1px solid #E4E7EC;
+        border-collapse: collapse;
+
+        tr {
+            border: 1px solid #E4E7EC;
+        }
+
+        td {
+            padding: 5px;
+            border: 1px solid #E4E7EC;
+            text-align: center;
+            font-size: 18px;
+            
+            &:nth-child(1) {
+                background-color: #E4E7EC;
+                font-weight: bold;
+            }
+        }
+    }
+
+    table.contentTable {
+        border: 1px solid #E4E7EC;
+        border-collapse: collapse;
+        font-size: 18px;
+
+        col.itemNo {
+            width: 100px;
+        }
+
+        col.count {
+            width: 150px;
+        }
+
+        tr {
+            border: 1px solid #E4E7EC;
+        }
+
+        thead {
+            td {
+                background-color: #E4E7EC;
+                font-weight: bold;
+            }
+        }
+
+        tbody {
+            td {
+                &:nth-child(2) {
+                    text-align: left;
+                }
+            }
+        }
+
+        td {
+            border: 1px solid #E4E7EC;
+            padding: 5px;
+            text-align: center;
+        }
+    }
+}

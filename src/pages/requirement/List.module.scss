@@ -17,10 +17,14 @@
 
             td {
                 text-align: center;
+                font-size: 18px;
             }
 
-            tbody td:nth-child(4) {
-                text-align: start;
+            thead td {
+                font-weight: bold;
+            }
+
+            tbody td:nth-child(3) {
                 width: 600px;
             }
         }
