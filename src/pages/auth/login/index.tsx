@@ -1,21 +1,28 @@
 import cn from 'classnames';
-import styles from './Login.module.scss';
-import { Container } from '../../components';
+import styles from './index.module.scss';
+import { Container } from '@/components';
 import { Form, Button } from 'react-bootstrap';
 import { useState } from 'react';
-import { loginApi } from '../../utils';
+import { loginApi } from '@/utils';
+import { useAppDispatch } from '@/hook';
+import { saveToken } from './loginSlice';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+    const dispatch = useAppDispatch();
+    const navigate = useNavigate();
+
     const [userId, setUserId] = useState('');
     const [password, setPassword] = useState('');
 
-    function onClickLoginButton() {
+    async function onClickLoginButton() {
         loginApi({userId, password})
         .then(({data}: LoginResponse) => {
-            console.log(data);
+            dispatch(saveToken(data));
+            navigate('/');
         })
-        .catch(({response: {data}}) => {
-            console.log(data);
+        .catch(({response: { data: { message }}}) => {
+            alert(message);
         })
     }
 

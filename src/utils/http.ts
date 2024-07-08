@@ -5,6 +5,6 @@ const http = axios.create({
     timeout: 10 * 1000
 });
 
-export function loginApi(requestBody: LoginRequestBody): Promise<LoginResponse> {
-    return http.post<LoginResponseBody, LoginResponse, LoginRequestBody>('/api/v1/login', requestBody);
+export function loginApi(data: LoginInput): Promise<LoginResponse> {
+    return http.post<Token, LoginResponse, LoginInput>('/api/v1/login', data);
 }

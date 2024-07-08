@@ -2,14 +2,13 @@ declare interface ContainerProps {
     children?: React.ReactNode;
 }
 
-declare interface LoginRequestBody {
+declare interface LoginInput {
     userId: string;
     password: string;
 }
-
-declare interface LoginResponseBody {
+declare interface Token {
     accessToken: string;
     refreshToken: string;
 }
 
-declare type LoginResponse = AxiosResponse<LoginResponseBody, LoginRequestBody>;
+declare type LoginResponse = AxiosResponse<Token, LoginInput>;
