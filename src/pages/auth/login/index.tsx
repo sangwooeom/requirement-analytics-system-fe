@@ -2,28 +2,41 @@ import cn from 'classnames';
 import styles from './index.module.scss';
 import { Container } from '@/components';
 import { Form, Button } from 'react-bootstrap';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { loginApi } from '@/utils';
-import { useAppDispatch } from '@/hook';
+import { useAppDispatch, useAppSelector } from '@/hook';
 import { saveToken } from './loginSlice';
 import { useNavigate } from 'react-router-dom';
+import { login, selectToken } from './loginSlice';
 
 export default function Login() {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
+    const token = useAppSelector(selectToken());
 
     const [userId, setUserId] = useState('');
     const [password, setPassword] = useState('');
 
-    async function onClickLoginButton() {
-        loginApi({userId, password})
-        .then(({data}: LoginResponse) => {
-            dispatch(saveToken(data));
+    useEffect(() => {
+        dispatch(login({userId: 'sangwoo.eom', password: '1234'}))
+    }, [])
+
+    function onClickLoginButton() {
+        dispatch(login({userId: 'sangwoo.eom', password: '12341'}))
+        .then(() => {
             navigate('/');
         })
-        .catch(({response: { data: { message }}}) => {
-            alert(message);
+        .catch((res) => {
+            console.log(res);
         })
+        // loginApi({userId, password})
+        // .then(({data}: LoginResponse) => {
+        //     dispatch(saveToken(data));
+        //     navigate('/');
+        // })
+        // .catch(({response: { data: { message }}}) => {
+        //     alert(message);
+        // })
     }
 
     return (

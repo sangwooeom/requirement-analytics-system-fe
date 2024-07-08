@@ -11,4 +11,13 @@ declare interface Token {
     refreshToken: string;
 }
 
+declare interface State {
+    status: 'idle' | 'loading' | 'succeeded' | 'failed';
+    error?: string
+}
+
+declare interface LoginState extends State {
+    token: Token;
+}
+
 declare type LoginResponse = AxiosResponse<Token, LoginInput>;
