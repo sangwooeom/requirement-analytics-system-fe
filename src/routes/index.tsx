@@ -5,31 +5,37 @@ import RequirementList from "../pages/requirement/List";
 import RequirementDetail from "../pages/requirement/Detail";
 import Main from "../pages/Main";
 import App from "../App";
+import { PrivateRoute } from "@/pages";
 
 const router = createBrowserRouter([
     {
         element: <App />,
         children: [
             {
-                path: '/',
-                element: <Main />
+                element: <PrivateRoute />,
+                children: [
+                    {
+                        path: '/',
+                        element: <Main />
+                    },
+                    {
+                        path: "/project/list",
+                        element: <ProjectList />
+                    },
+                    {
+                        path: '/requirement/list',
+                        element: <RequirementList />
+                    },
+                    {
+                        path: '/requirement/detail',
+                        element: <RequirementDetail />
+                    }
+                ]
             },
             {
                 path: "/login",
                 element: <Login />
             },
-            {
-                path: "/project/list",
-                element: <ProjectList />
-            },
-            {
-                path: '/requirement/list',
-                element: <RequirementList />
-            },
-            {
-                path: '/requirement/detail',
-                element: <RequirementDetail />
-            }
         ]
     }
 ])

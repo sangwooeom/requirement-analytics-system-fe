@@ -21,3 +21,7 @@ declare interface LoginState extends State {
 }
 
 declare type LoginResponse = AxiosResponse<Token, LoginInput>;
+
+declare type IsValidTokenResponse = AxiosResponse<never, boolean>;
+
+declare module 'redux-persist/lib/storage';
