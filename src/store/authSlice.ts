@@ -15,7 +15,7 @@ export const authSlice = createSlice({
             refreshToken: ''
         },
         status: 'idle',
-    } as LoginState,
+    } as AuthState,
     reducers: {
         logout: (state) => {
             state.token = {accessToken: '', refreshToken: ''};
@@ -28,7 +28,6 @@ export const authSlice = createSlice({
             })
             .addCase(login.fulfilled, (state, action) => {
                 state.status = 'succeeded';
-                console.log(action.payload);
                 state.token = action.payload
             })
             .addCase(login.rejected, (state, action) => {

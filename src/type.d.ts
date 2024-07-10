@@ -16,7 +16,7 @@ declare interface State {
     error?: string
 }
 
-declare interface LoginState extends State {
+declare interface AuthState extends State {
     token: Token;
 }
 

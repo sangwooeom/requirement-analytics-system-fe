@@ -10,5 +10,5 @@ export function loginApi(data: LoginInput): Promise<LoginResponse> {
 }
 
 export function isValidTokenApi(token: string): IsValidTokenResponse {
-    return http.get<boolean, IsValidTokenResponse, never>('/api/v1/token/valiation', { headers: { 'Authorization': token}});
+    return http.get<boolean, IsValidTokenResponse, never>('/api/v1/token/validation', { headers: { 'Authorization': token}});
 }
