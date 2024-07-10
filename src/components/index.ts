@@ -1,7 +1,7 @@
 import Container from "./Container";
-import Navigation from "./Navigation";
+import Navigation from "./navigation";
 import Pagination from "./Pagination";
-import ProjectCard from "./ProjectCard";
+import ProjectCard from "./project-card";
 import Loading from "./loading";
 
 export {

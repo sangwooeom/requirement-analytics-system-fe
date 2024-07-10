@@ -3,7 +3,7 @@ import Login from "../pages/auth/login";
 import ProjectList from "../pages/project/List";
 import RequirementList from "../pages/requirement/List";
 import RequirementDetail from "../pages/requirement/Detail";
-import Main from "../pages/Main";
+import Main from '@/pages/main';
 import App from "../App";
 import { PrivateRoute } from "@/pages";
 

@@ -17,6 +17,7 @@ export default function Login() {
     async function onClickLoginButton() {
         try {
             await dispatch(login({userId, password})).unwrap();
+            navigate('/')
         } catch (error) {
             console.log(error);
             alert('로그인이 실패하였습니다.');

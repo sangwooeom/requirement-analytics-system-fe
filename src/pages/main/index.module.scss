@@ -1,0 +1,33 @@
+.section {
+    margin-top: 150px;
+    display: grid;
+    row-gap: 30px;
+
+    .summary {
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+
+            thead {
+                td {
+                    font-weight: bold;
+                }
+            }
+
+            tr {
+                border: 1px solid black;
+
+                td {
+                    border: 1px solid black;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .list {
+        display: grid;
+        grid-column: auto auto auto auto;
+        column-gap: 20px;
+    }
+}
