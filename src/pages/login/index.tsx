@@ -5,7 +5,7 @@ import { Form, Button } from 'react-bootstrap';
 import { useState } from 'react';
 import { useAppDispatch } from '@/utils/hook';
 import { useNavigate } from 'react-router-dom';
-import { login } from '../../../store/authSlice';
+import { login } from '../../store/authSlice';
 
 export default function Login() {
     const dispatch = useAppDispatch();
