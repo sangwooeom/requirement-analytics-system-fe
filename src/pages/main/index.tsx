@@ -29,18 +29,12 @@ export default function Main() {
                     </table>
                 </div>
                 <div className={cn(styles.list)}>
-                    <div>
-                        <ProjectCard />
-                    </div>
-                    <div>
-                        <ProjectCard />
-                    </div>
-                    <div>
-                        <ProjectCard />
-                    </div>
-                    <div>
-                        <ProjectCard />
-                    </div>
+                    <ProjectCard />
+                    <ProjectCard />
+                    <ProjectCard />
+                    <ProjectCard />
+                    <ProjectCard />
+                    <ProjectCard />
                 </div>
             </div>
         </Container>
